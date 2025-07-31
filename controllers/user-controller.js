@@ -20,3 +20,12 @@ export const getUserById = (req, res) => {
 
      res.send(findUser);
 }
+
+export const deleteUserById = (req, res) => {
+    const {id} = req.params 
+    
+    users = users.filter((user) => user.id !== id);
+
+    res.send(`User with the id ${id} deleted`);
+
+}
