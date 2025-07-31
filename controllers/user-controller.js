@@ -13,3 +13,10 @@ export const createUser = (req, res) => {
   res.send(`data masuk dengan username ${user.firstname}`);
 }
 
+export const getUserById = (req, res) => {
+    const {id} = req.params 
+
+    const findUser = users.find((user) => user.id === id);
+
+     res.send(findUser);
+}

@@ -1,6 +1,6 @@
 import express from "express";
 import { v4 as uuidv4 } from "uuid";
-import { createUser, getAllUser } from "../controllers/user-controller";
+import { createUser, getAllUser, getUserById } from "../controllers/user-controller";
 uuidv4();
 
 const router = express.Router();
@@ -11,13 +11,7 @@ router.get("/", getAllUser)
 
 router.post("/", createUser)
 
-router.get("/:id", (req, res) => {
-  const { id } = req.params;
-
-  const findUser = users.find((user) => user.id === id);
-
-  res.send(findUser);
-});
+router.get("/:id", getUserById);
 
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
