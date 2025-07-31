@@ -1,3 +1,7 @@
+export const getAllUser = (req, res) => {
+    res.send(users); 
+}
+
 export const createUser = (req, res) => {
     const user = req.body;
     const userId = uuidv4();
@@ -8,3 +12,4 @@ export const createUser = (req, res) => {
 
   res.send(`data masuk dengan username ${user.firstname}`);
 }
+
