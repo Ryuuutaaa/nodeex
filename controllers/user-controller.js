@@ -1,3 +1,11 @@
+import { v4 as uuidv4 } from "uuid";
+
+let users = [];
+
+// uuidv4();
+
+
+
 export const getAllUser = (req, res) => {
     res.send(users); 
 }

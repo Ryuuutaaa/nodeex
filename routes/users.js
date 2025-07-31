@@ -1,11 +1,7 @@
 import express from "express";
-import { v4 as uuidv4 } from "uuid";
-import { createUser, deleteUserById, getAllUser, getUserById, updateUserById } from "../controllers/user-controller";
-uuidv4();
+import { createUser, deleteUserById, getAllUser, getUserById, updateUserById } from "../controllers/user-controller.js";
 
 const router = express.Router();
-
-let users = [];
 
 router.get("/", getAllUser)
 
