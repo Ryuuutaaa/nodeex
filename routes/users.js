@@ -1,6 +1,6 @@
 import express from "express";
 import { v4 as uuidv4 } from "uuid";
-import { createUser, deleteUserById, getAllUser, getUserById } from "../controllers/user-controller";
+import { createUser, deleteUserById, getAllUser, getUserById, updateUserById } from "../controllers/user-controller";
 uuidv4();
 
 const router = express.Router();
@@ -15,21 +15,6 @@ router.get("/:id", getUserById);
 
 router.delete("/:id", deleteUserById);
 
-
-router.patch("/:id", (req, res) => {
-
-  const {id} = req.params;
-  const {firstname, lasname, age} = req.body; 
-  
-  const user = users.find((user) => user.id === id);
-
-  if(firstname) user.firstname = firstname;
-  if(lasname) user.lasname = lasname; 
-  if(age) user.age = age;
-
-  res.send(`Id user ${id} update `);
-
-
-})
+router.patch("/:id",updateUserById)
 
 export default router;
